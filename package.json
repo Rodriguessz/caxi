@@ -1,0 +1,27 @@
+{
+  "name": "caxi",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "scripts": {
+    "dev:up": "docker compose up --build -d",
+    "dev:down": "docker compose down",
+    "dev:reset": "docker compose down -v && docker compose up --build -d",
+    "dev:logs": "docker compose logs -f api",
+    "smoke": "node scripts/smoke.mjs",
+    "lint": "eslint .",
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm test --workspaces --if-present",
+    "build": "npm run build --workspaces"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^15.15.0",
+    "typescript-eslint": "^8.72.0"
+  }
+}
