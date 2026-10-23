@@ -25,11 +25,11 @@ jobs:
     env:
       DATABASE_URL: postgres://caxi:caxi_ci@localhost:5432/caxi_test
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with: { fetch-depth: 0 }
       - name: Varredura de segredos (gitleaks)
         run: docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.21.2 detect --source /repo --redact -v
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with: { node-version-file: .nvmrc, cache: npm }
       - run: npm ci
       - run: npm run lint
@@ -46,8 +46,8 @@ jobs:
     # Prova que o ambiente sobe do zero numa máquina limpa, com um único comando.
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with: { node-version-file: .nvmrc }
       - run: docker compose up --build -d
       - run: npm run smoke
