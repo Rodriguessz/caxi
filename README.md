@@ -54,6 +54,10 @@ npm run dev -w apps/web     # http://localhost:5173 (proxy de /api para :3000)
 
 > Este ambiente é para **desenvolvimento**. Ele não serve como evidência de deploy nem de CI/CD. Essas evidências vêm das execuções do GitHub Actions e dos deploys no piloto AWS.
 
+## Como contribuir
+
+Branches, commits e Pull Requests seguem as regras do [`CONTRIBUTING.md`](CONTRIBUTING.md). O CI reprova automaticamente o que estiver fora do padrão.
+
 ## Qualidade (CI em `.github/workflows/ci.yml`)
 
-Em todo PR e push na `main`: gitleaks, lint, typecheck, testes Jest, migrations do zero em PostGIS limpo (incluindo revert), `npm audit` e build. Além disso, sobe o ambiente reproduzível do zero e roda o smoke test.
+Em todo PR, o check `padroes-do-pr` (`.github/workflows/padroes-pr.yml`) valida o nome da branch e o título. Em todo PR e push na `main`: gitleaks, lint, typecheck, testes Jest, migrations do zero em PostGIS limpo (incluindo revert), `npm audit` e build. Além disso, sobe o ambiente reproduzível do zero e roda o smoke test.
