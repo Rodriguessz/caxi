@@ -1,6 +1,6 @@
 # Caxi
 
-ERP mobile-first para feirantes e vendedores permissionários.
+ERP mobile-first para feirantes e vendedores permissionários (MVP em construção).
 Monorepo com `apps/web` (React + Vite) e `apps/api` (NestJS + TypeORM + PostgreSQL/PostGIS).
 
 ## Ambiente local reproduzível
