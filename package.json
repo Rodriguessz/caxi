@@ -23,5 +23,8 @@
     "eslint": "^9.39.5",
     "globals": "^15.15.0",
     "typescript-eslint": "^8.72.0"
+  },
+  "overrides": {
+    "multer": "2.5.0"
   }
 }
